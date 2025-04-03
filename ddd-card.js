@@ -68,7 +68,7 @@ export class DddCard extends DDD{
       .card-button {
         background-color: var(--ddd-theme-default-nittanyNavy);
         color: white;
-        border-radius: var(--ddd-radius-md);
+        border-radius: var(--ddd-radius-sm);
         padding: var(--ddd-spacing-2);
         border: solid var(--ddd-theme-default-nittanyNavy);
         width: 100%;
