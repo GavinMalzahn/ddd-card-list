@@ -47,29 +47,20 @@ export class DddCardList extends DDD {
   static get styles() {
     return [super.styles,
     css`
-      :host {
-        display: block;
-        color: var(--ddd-theme-primary);
-        background-color: var(--ddd-theme-accent);
-        font-family: var(--ddd-font-navigation);
-      }
-      .wrapper {
-        margin: var(--ddd-spacing-2);
-        padding: var(--ddd-spacing-4);
-      }
       div ::slotted(*){
         display: inline-block;
+        row-gap: 28px;
+        column-gap: 28px;
       }
-      h3 span {
-        font-size: var(--ddd-card-list-label-font-size, var(--ddd-font-size-s));
-      }
+
     `];
   }
 
   // Lit render the HTML
   render() {
     return html`
-    <slot></slot>
+      <slot></slot>
+    
   `;
   }
 

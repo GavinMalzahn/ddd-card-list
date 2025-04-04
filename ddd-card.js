@@ -21,6 +21,8 @@ export class DddCard extends DDD{
     super();
     this.title = "";
     this.image = "";
+    this.href = "";
+    this.description = "";
     
   }
 
@@ -30,6 +32,8 @@ export class DddCard extends DDD{
       ...super.properties,
       title: { type: String },
       image: { type: String },
+      href: { type: String },
+      description: { type: String },
     };
   }
 
@@ -41,6 +45,7 @@ export class DddCard extends DDD{
         border-radius: var(--ddd-radius-md);
         max-width: 500px;
         background-color: white;
+        /*display: inline-block;*/
         
       }
       .image {
@@ -53,27 +58,47 @@ export class DddCard extends DDD{
         
       }
       .card-content {
-        padding: var(--ddd-spacing-4);  
+        padding: 16px 20px 24px 20px;  
         background-color: white;
         color: var(--ddd-theme-default-nittanyNavy);
         border-bottom-left-radius: var(--ddd-radius-md);
         border-bottom-right-radius: var(--ddd-radius-md); 
 
       }
+      .title-description {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        font-family: var(--ddd-font-family-roboto);
+
+      }
+      .card-title {
+        margin: 0px;
+        border: none;
+        padding: 0px;
+        
+      }
+      .description-content {
+        color: var(--ddd-theme-default-nittanyNavy);
+        margin-top: 8px;
+        margin-bottom: 16px;
+      }
+
       .description {
         font-size: var(--ddd-card-description-font-size, var(--ddd-font-size-s));
-        color: var(--ddd-card-description-color, var(--ddd-theme-primary));
-        margin-bottom: var(--ddd-spacing-12);
+        color: var(--ddd-theme-default-nittanyNavy);
+        
       }
       .card-button {
         background-color: var(--ddd-theme-default-nittanyNavy);
         color: white;
         border-radius: var(--ddd-radius-sm);
         padding: var(--ddd-spacing-2);
-        border: solid var(--ddd-theme-default-nittanyNavy);
+        padding: 12px 16px 12px 24px;
         width: 100%;
         align-items: center;
         font-size: 16px;
+        
       }
       
     `];
@@ -88,7 +113,7 @@ export class DddCard extends DDD{
             <div class="title-description">
               <h2 class="card-title">${this.title}</h2>
               <div class="description"> 
-                <slot name="description-content">hello</slot>
+                  <p class="description-content">${this.description}</p>
               </div>
             </div>
             <a href="${this.href}" target="_blank" class="card-link">
