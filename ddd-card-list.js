@@ -47,10 +47,26 @@ export class DddCardList extends DDD {
   static get styles() {
     return [super.styles,
     css`
+      :host {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 16px;
+        box-sizing: border-box;
+      }
       div ::slotted(*){
         display: inline-block;
-        row-gap: 28px;
-        column-gap: 28px;
+        
+      }
+      .ddd-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px;
+        border: 1px solid var(--ddd-theme-primary);
+        border-radius: 10px;
+        background-color: var(--ddd-theme-accent);
       }
 
     `];
@@ -59,8 +75,9 @@ export class DddCardList extends DDD {
   // Lit render the HTML
   render() {
     return html`
+    <div class="wrapper">
       <slot></slot>
-    
+    </div>
   `;
   }
 

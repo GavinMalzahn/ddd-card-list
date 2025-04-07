@@ -43,7 +43,7 @@ export class DddCard extends DDD{
     css`
       .wrapper {
         border-radius: var(--ddd-radius-md);
-        max-width: 500px;
+        max-width: 420px;
         background-color: white;
         /*display: inline-block;*/
         
