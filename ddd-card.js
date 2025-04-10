@@ -43,9 +43,10 @@ export class DddCard extends DDD{
     css`
       .wrapper {
         border-radius: var(--ddd-radius-md);
-        max-width: 420px;
         background-color: white;
-        /*display: inline-block;*/
+        flex-wrap: nowrap;
+        height: 100%;
+        overflow: hidden;
         
       }
       .image {
@@ -59,6 +60,9 @@ export class DddCard extends DDD{
       }
       .card-content {
         padding: 16px 20px 24px 20px;  
+        display: flex;
+        height: 100%;
+        flex-direction: column;   
         background-color: white;
         color: var(--ddd-theme-default-nittanyNavy);
         border-bottom-left-radius: var(--ddd-radius-md);
@@ -69,7 +73,7 @@ export class DddCard extends DDD{
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
-        font-family: var(--ddd-font-family-roboto);
+        font-family: var(--ddd-font-family-roboto); 
 
       }
       .card-title {
@@ -82,6 +86,7 @@ export class DddCard extends DDD{
         color: var(--ddd-theme-default-nittanyNavy);
         margin-top: 8px;
         margin-bottom: 16px;
+        white-space: pre-line;
       }
 
       .description {
@@ -93,9 +98,9 @@ export class DddCard extends DDD{
         background-color: var(--ddd-theme-default-nittanyNavy);
         color: white;
         border-radius: var(--ddd-radius-sm);
-        padding: var(--ddd-spacing-2);
-        padding: 12px 16px 12px 24px;
+        padding: 12px 24px 12px 16px;
         width: 100%;
+        height: fit-content;
         align-items: center;
         font-size: 16px;
         
@@ -113,7 +118,7 @@ export class DddCard extends DDD{
             <div class="title-description">
               <h2 class="card-title">${this.title}</h2>
               <div class="description"> 
-                  <p class="description-content">${this.description}</p>
+                <p class="description-content">${this.description}</p>
               </div>
             </div>
             <a href="${this.href}" target="_blank" class="card-link">
@@ -122,7 +127,6 @@ export class DddCard extends DDD{
               </button>
             </a>
           </div>
-          <slot></slot>
         </div>`;
   }
   
