@@ -36,7 +36,10 @@ export class DddCardList extends DDD {
     return [super.styles,
     css`
       :host {
-        display: flex;
+        display:flex;
+        background-color: none;
+        border: none;
+        color: none; 
         
       }
       slot {
@@ -45,11 +48,14 @@ export class DddCardList extends DDD {
         gap: 16px;
       }
      
-      .ddd-wrapper {
-        display: flex;
-        padding: 60px, 26px, 60px, 26px;
+      .wrapper {
         background-color: var(--ddd-theme-accent);
+        display: flex;
+        padding: 60px 26px 60px 26px;
+        
       }
+
+
 
     `];
   }
