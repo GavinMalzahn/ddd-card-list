@@ -42,7 +42,7 @@ export class DddCardList extends DDD {
       slot {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        gap: 32px; //ddd spacing doesn't work here
+        gap: 8px; //ddd spacing doesn't work here
       }
      
       .wrapper {
@@ -57,7 +57,7 @@ export class DddCardList extends DDD {
         }
         slot {
           grid-template-columns: repeat(2, 1fr);
-          gap: 8px; //ddd spacing doesn't work here
+          gap: 16px; //ddd spacing doesn't work here
         }
       }
       @media screen and (min-width: 1080px) {
