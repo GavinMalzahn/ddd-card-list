@@ -43,7 +43,7 @@ export class DddCard extends DDD{
     css`
       .wrapper {
         border-radius: var(--ddd-radius-md);
-        background-color: white;
+        background-color: --ddd-theme-default-white;
         flex-wrap: nowrap;
         height: 100%;
         overflow: hidden;
@@ -67,14 +67,13 @@ export class DddCard extends DDD{
         background-color: var(--ddd-theme-accent);
         display: flex;
         flex-direction: column;
-        background-color: white;
+        background-color: --ddd-theme-default-white;
         color: var(--ddd-theme-default-nittanyNavy);
         border-bottom-left-radius: var(--ddd-radius-md);
         border-bottom-right-radius: var(--ddd-radius-md); 
         justify-content: space-between;
         flex-grow: 1;
         
-
       }
       .title-description {
         display: flex;
@@ -84,33 +83,34 @@ export class DddCard extends DDD{
         
       }
       .card-title {
-        margin: 0px;
-        border: none;
-        padding: 0px;
+        margin: --ddd-spacing-0;
+        padding: --ddd-spacing-0;
         
       }
       .description-content {
         color: var(--ddd-theme-default-nittanyNavy);
-        margin-top: 8px;
-        margin-bottom: 16px;
+        margin-top: --ddd-spacing-2;
+        margin-bottom: --ddd-spacing-4;
         white-space: pre-line;
         font-size: var(--ddd-card-description-font-size, var(--ddd-font-size-s));
         color: var(--ddd-theme-default-nittanyNavy);
       }
 
       .card-button {
-        background-color: var(--ddd-theme-default-nittanyNavy);
-        color: white;
+        background-color: var(--ddd-theme-default-beaverBlue);
+        color: --ddd-theme-default-white;
         border-radius: var(--ddd-radius-sm);
         padding: 12px 24px 12px 16px;
         width: 100%;
         height: fit-content;
         align-items: center;
-        font-size: 16px;
-        font-weight: 500;
+        font-size: --ddd-font-size-4xs;
+        font-weight: --ddd-font-weight-medium;
         justify-content: space-between;
         
-        
+      }
+      .card-button:hover {
+        background-color: var(--ddd-theme-default-nittanyNavy);
       }
       
     `];

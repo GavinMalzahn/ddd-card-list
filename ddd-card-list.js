@@ -37,22 +37,37 @@ export class DddCardList extends DDD {
     css`
       :host {
         display:flex;
-        background-color: none;
-        border: none;
-        color: none; 
         
       }
       slot {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 32px; //ddd spacing doesn't work here
       }
      
       .wrapper {
         background-color: var(--ddd-theme-accent);
         display: flex;
-        padding: 60px 26px 60px 26px;
+        padding: 40px 26px 40px 26px;
         
+      }
+      @media screen and (min-width: 768px) {
+        .wrapper{
+          padding: 40px 26px 40px 26px;
+        }
+        slot {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 8px; //ddd spacing doesn't work here
+        }
+      }
+      @media screen and (min-width: 1080px) {
+        .wrapper{
+          padding: 60px 26px 60px 26px;
+        }
+        slot {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 32px; //ddd spacing doesn't work here it just has a small gap that doesn't change in size
+        }
       }
 
 
